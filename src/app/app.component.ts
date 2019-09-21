@@ -23,6 +23,14 @@ export class AppComponent {
     this.values += value;
   }
 
+  flipStatus(i) {
+    if( this.items[i].complete === true ){
+      this.items[i].complete = false;
+    } else {
+      this.items[i].complete = true;
+    }
+  }
+
   // Write code to push new item
   submitNewItem(task_label) {
     this.items.push({
@@ -32,7 +40,8 @@ export class AppComponent {
   }
 
   addUserTask(task) {
-    this.submitNewItem(task)
+    this.submitNewItem(task);
+    this.values = '';
   }
 
   // Write code to complete item

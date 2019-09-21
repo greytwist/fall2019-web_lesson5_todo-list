@@ -14,13 +14,11 @@
           <span (click)="addUserTask(values)">+</span>
           <input id ="userInput" (keyup)="onKey($event.key)">
           <p>{{values}}</p>
-
-
         </div>
       </div>
       <div class="todo-list__items" *ngFor="let item of items; let i = index;">
-        <li class="completed"><span>{{i + 1 }}</span>
-          <div>{{item.task}}</div>
+        <li><span>{{i + 1 }}</span>
+          <div (click)="flipStatus(i)" >{{item.task + "Complete:" + item.complete}}</div>
           <div class = "todo-list-item__trash" (click)="deleteItem(i)">trash</div>
         </li>
       </div>
