@@ -10,12 +10,17 @@ export class AppComponent {
   // define list of items
   title = 'todo list';
   public items: Array<{ task: string, complete: boolean }>= [];
+  values = '';
+
 
   constructor() {
     this.submitNewItem("test1")
     this.submitNewItem("test2")
     this.submitNewItem("test3")
-    this.submitNewItem("Finish this app")
+  }
+
+  onKey(value: string) {
+    this.values += value;
   }
 
   // Write code to push new item
@@ -24,6 +29,10 @@ export class AppComponent {
       task: task_label,
       complete: false
     });
+  }
+
+  addUserTask(task) {
+    this.submitNewItem(task)
   }
 
   // Write code to complete item
@@ -35,9 +44,8 @@ export class AppComponent {
   deleteItem(take_id) {
     for(var i = take_id; i < this.items.length; i++){
       this.items[i] = this.items[i + 1];
-      this.items.pop();
     }
-
+    this.items.pop();
   }
 
 }
