@@ -172,7 +172,9 @@ body .container .todo-list .todo-list__items li .todo-list-item__complete {
   -o-transition: right 400ms ease-in-out;
   transition: right 400ms ease-in-out;
 }
-body .container .todo-list .todo-list__items li:hover .todo-list-item__trash {
+body .container .todo-list .t
+
+odo-list__items li:hover .todo-list-item__trash {
   right: 40px;
 }
 body .container .todo-list .todo-list__items li:hover .todo-list-item__complete {

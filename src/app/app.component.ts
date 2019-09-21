@@ -8,20 +8,35 @@ import { Component } from '@angular/core';
 export class AppComponent {
 
   // define list of items
-  items= [];
+  title = 'todo list';
+  public items: Array<{ task: string, complete: boolean }>= [];
+
+  constructor() {
+    this.submitNewItem("test1")
+    this.submitNewItem("test2")
+    this.submitNewItem("test3")
+    this.submitNewItem("Finish this app")
+  }
 
   // Write code to push new item
-  submitNewItem() {
-
+  submitNewItem(task_label) {
+    this.items.push({
+      task: task_label,
+      complete: false
+    });
   }
 
   // Write code to complete item
-  completeItem() {
-
+  completeItem(id) {
+    this.items[id].complete = true;
   }
 
   // Write code to delete item
-  deleteItem() {
+  deleteItem(take_id) {
+    for(var i = take_id; i < this.items.length; i++){
+      this.items[i] = this.items[i + 1];
+      this.items.pop();
+    }
 
   }
 

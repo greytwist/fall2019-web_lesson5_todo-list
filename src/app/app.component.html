@@ -6,7 +6,15 @@
   // 1. write Typescript code in "app.component.ts" to work with ToDo list
 </head>
 <body>
-// 2. write html(view) code to display the ToDos
-
+  <div class="container">
+    <h1>TO DO LIST FOR 2019</h1>
+    <div class="todo-list">
+      <div class="todo-list__items" *ngFor="let item of items; let i = index;">
+        <li><span>{{i + 1 }}</span>
+          {{item.task}}
+        </li>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
